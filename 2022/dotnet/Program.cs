@@ -5,6 +5,7 @@ using aoc2022._4;
 using aoc2022._5;
 using aoc2022._6;
 using aoc2022._7;
+using aoc2022._8;
 
 //AoC_2022_1a.Answer();
 //AoC_2022_1b.Answer();
@@ -23,3 +24,5 @@ using aoc2022._7;
 //AoC_2022_6.Answer();
 
 //AoC_2022_7.Answer();
+
+AoC_2022_8.Answer();
