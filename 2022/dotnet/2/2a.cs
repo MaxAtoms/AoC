@@ -1,4 +1,4 @@
-﻿namespace aoc2022;
+﻿namespace aoc2022._2;
 
 internal static class AoC_2022_2a
 {
