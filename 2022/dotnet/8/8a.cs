@@ -1,6 +1,6 @@
 namespace aoc2022._8;
 
-internal static class AoC_2022_8
+internal static class AoC_2022_8a
 {
 	private record Tree(int Height)
 	{
