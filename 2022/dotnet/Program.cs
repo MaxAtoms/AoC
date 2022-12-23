@@ -7,6 +7,8 @@ using aoc2022._6;
 using aoc2022._7;
 using aoc2022._8;
 using aoc2022._9;
+using aoc2022._10;
+using aoc2022._11;
 
 //AoC_2022_1a.Answer();
 //AoC_2022_1b.Answer();
@@ -30,4 +32,8 @@ using aoc2022._9;
 //AoC_2022_8b.Answer();
 
 //AoC_2022_9a.Answer();
-AoC_2022_9b.Answer();
+//AoC_2022_9b.Answer();
+
+//AoC_2022_10.Answer();
+
+AoC_2022_11.Answer();
