@@ -9,6 +9,7 @@ using aoc2022._8;
 using aoc2022._9;
 using aoc2022._10;
 using aoc2022._11;
+using aoc2022._13;
 
 //AoC_2022_1a.Answer();
 //AoC_2022_1b.Answer();
@@ -36,4 +37,4 @@ using aoc2022._11;
 
 //AoC_2022_10.Answer();
 
-AoC_2022_11.Answer();
+AoC_2022_11a.Answer();
