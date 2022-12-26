@@ -37,4 +37,7 @@ using aoc2022._13;
 
 //AoC_2022_10.Answer();
 
-AoC_2022_11a.Answer();
+//AoC_2022_11a.Answer();
+//AoC_2022_11b.Answer();
+
+AoC_2022_13.Answer();
