@@ -1,6 +1,6 @@
 namespace aoc2022._13;
 
-public static class AoC_2022_13
+public static class AoC_2022_13a
 {
 	public static void Answer()
 	{

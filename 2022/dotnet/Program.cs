@@ -40,4 +40,5 @@ using aoc2022._13;
 //AoC_2022_11a.Answer();
 //AoC_2022_11b.Answer();
 
-AoC_2022_13.Answer();
+//AoC_2022_13a.Answer();
+AoC_2022_13b.Answer();
