@@ -1,6 +1,6 @@
 namespace aoc2022._14;
 
-public static class AoC_2022_14a
+public static class AoC_2022_14
 {
 	private static int _grainOfSandCount;
 
