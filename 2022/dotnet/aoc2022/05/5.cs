@@ -1,16 +1,27 @@
 using System.Text.RegularExpressions;
 
-namespace aoc2022._5;
+namespace aoc2022._05;
 
-internal static class AoC_2022_5
+public class AoC_2022_5 : IChallenge
 {
+	private readonly bool _part2;
+
+	public AoC_2022_5( bool part2 = false )
+	{
+		_part2 = part2;
+	}
+	
+	public string CalculatePuzzleSolution()
+	{
+		var fileLines = File.ReadLines("./05/input.txt");
+		return SolvePuzzle( fileLines );
+	}
+
 	private record Command(int Count, int OriginPos, int EndPos);
 
-	// Answer 5a) FRDSQRRCD
-	// Answer 5b) HRFTQVWNN
-	public static void Answer()
+	public string SolvePuzzle(IEnumerable<string> inputLines)
 	{
-		var lines = File.ReadAllLines("./5/input.txt");
+		var lines = inputLines.ToArray();
 		var separationIndex = lines.Select((v, i) => (v, i))
 			.First(l => l.v == "").i;
 
@@ -22,10 +33,11 @@ internal static class AoC_2022_5
 
 		WriteStacks(stacks, "");
 		var topCrates = stacks.Select(i => i.Last());
-		Console.WriteLine(string.Join("", topCrates));
+		
+		return string.Join("", topCrates);
 	}
 
-	private static void ParseAndInterpretCommands(IEnumerable<string> commandLines, IReadOnlyList<List<char>> stacks)
+	private void ParseAndInterpretCommands(IEnumerable<string> commandLines, IReadOnlyList<List<char>> stacks)
 	{
 		foreach (var line in commandLines)
 		{
@@ -55,14 +67,16 @@ internal static class AoC_2022_5
 		return new Command(m(1), m(2) - 1, m(3) - 1);
 	}
 
-	private static void ExecuteCommand(Command command, IReadOnlyList<List<char>> stacks)
+	private void ExecuteCommand(Command command, IReadOnlyList<List<char>> stacks)
 	{
 		var originStack = stacks[command.OriginPos];
 		
 		var crates = originStack.TakeLast(command.Count);
-		
-		// 5a
-		//crates = crates.Reverse();
+
+		if (!_part2)
+		{
+			crates = crates.Reverse();
+		}
 		
 		stacks[command.EndPos].AddRange(crates);
 		originStack.RemoveRange(originStack.Count - command.Count, command.Count);

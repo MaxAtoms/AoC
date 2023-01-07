@@ -1,7 +1,13 @@
-﻿namespace aoc2022._2;
+﻿namespace aoc2022._02;
 
-internal static class AoC_2022_2b
+public class AoC_2022_2b : IChallenge
 {
+	public string CalculatePuzzleSolution()
+	{
+		var fileLines = File.ReadLines("./02/input.txt");
+		return SolvePuzzle( fileLines );
+	}
+	
 	private enum Play
 	{
 		Rock,
@@ -18,10 +24,9 @@ internal static class AoC_2022_2b
 
 	private record Round(Play OpponentPlay, DesiredResult result);
 
-	public static void Answer()
+	public string SolvePuzzle(IEnumerable<string> inputLines)
 	{
-		var lines = File.ReadAllLines("./2/input.txt");
-		var roundsAsLetters = lines.Select(s => s.Split(" ", 2))
+		var roundsAsLetters = inputLines.Select(s => s.Split(" ", 2))
 			.Select(s => new { OpponentLetter = s[0], OwnLetter = s[1] });
 
 		var rounds = roundsAsLetters.Select(r => new Round(
@@ -31,7 +36,7 @@ internal static class AoC_2022_2b
 
 		var roundScores = rounds.Select(GetRoundScore);
 		
-		Console.WriteLine( roundScores.Sum() );
+		return roundScores.Sum().ToString();
 	}
 
 	private static int GetRoundScore(Round round)

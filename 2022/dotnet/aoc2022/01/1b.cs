@@ -1,16 +1,22 @@
-﻿namespace aoc2022._1;
+﻿namespace aoc2022._01;
 
-internal static class AoC_2022_1b
+public class AoC_2022_1b : IChallenge
 {
-	public static void Answer()
+	public string CalculatePuzzleSolution()
+	{
+		var fileLines = File.ReadLines("./01/input.txt");
+		return SolvePuzzle( fileLines );
+	}
+	
+	public string SolvePuzzle(IEnumerable<string> inputLines)
 	{
 		var counter = 0;
-		var elfInventory = new List<List<int>>()
+		var elfInventory = new List<List<int>>
 		{
 			new()
 		};
 
-		foreach (var line in File.ReadLines("./1/input.txt"))
+		foreach (var line in inputLines)
 		{
 			if (line != "")
 			{
@@ -32,6 +38,6 @@ internal static class AoC_2022_1b
 
 		var topThreeSum = topThreeElfs.Sum();
 
-		Console.WriteLine(topThreeSum);
+		return topThreeSum.ToString();
 	}
 }
