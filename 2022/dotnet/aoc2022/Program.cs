@@ -14,8 +14,8 @@ var puzzle = puzzles.FirstOrDefault(t => t is { NumberOfDay: day, Part: part });
 
 if (puzzle is null)
 {
-	throw new Exception($"Requested Puzzle day {day} part {part} not found");
+	throw new Exception($"Requested Puzzle day {day} part {part.GetNumber()} not found");
 }
 
-Console.WriteLine($"Running puzzle day {day}, part {part}");
+Console.WriteLine($"Running puzzle day {day}, part {part.GetNumber()}");
 Console.WriteLine($"The answer is: {puzzle.CalculatePuzzleSolution()}");
