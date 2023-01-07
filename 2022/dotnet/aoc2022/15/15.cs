@@ -8,17 +8,25 @@ public record Coord(int X, int Y);
 
 public record Pair(Coord Sensor, Coord Beacon);
 
-public static class AoC_2022_15
+public class AoC_2022_15 : IPuzzle
 {
-	// Look Ma, no for-loops!
-	public static void Answer()
-	{
-		const int row = 2_000_000;
+	private readonly int _rowNumber;
 
-		var sensorReadings = File.ReadAllLines("./15/input.txt");
-		var coords = sensorReadings.Select(GetCoords).ToList();
+	public AoC_2022_15( int rowNumber )
+	{
+		_rowNumber = rowNumber;
+	}
+	
+	public int NumberOfDay => 15;
+	
+	public Part Part => Part.Part1;
+
+	// Look Ma, no for-loops!
+	public string SolvePuzzle(IEnumerable<string> inputLines)
+	{
+		var coords = inputLines.Select(GetCoords).ToList();
 		var radii = coords.Select(CalcManhattanDistance).ToList();
-		var distances = coords.Select(p => Math.Abs(p.Sensor.Y - row));
+		var distances = coords.Select(p => Math.Abs(p.Sensor.Y - _rowNumber));
 
 		var sensors = coords.Select(p => p.Sensor)
 			.Zip(distances, radii)
@@ -35,13 +43,14 @@ public static class AoC_2022_15
 		var uniquePositions = new HashSet<int>(positions);
 
 		var positionsWithBeaconPresent = coords.Select(c => c.Beacon)
-			.Where(b => b.Y == row)
+			.Where(b => b.Y == _rowNumber)
 			.Where(b => uniquePositions.Contains(b.X))
 			.Select(b => b.X);
 		var uniquePositionsWithBeaconPresent = new HashSet<int>(positionsWithBeaconPresent);
 
 		var positionCount = uniquePositions.Count - uniquePositionsWithBeaconPresent.Count;
-		Console.WriteLine(positionCount);
+
+		return positionCount.ToString();
 	}
 
 	private static Range CalcIntersection(int x, int distance, int radius)
@@ -75,7 +84,7 @@ public static class AoC_2022_15
 }
 
 internal static partial class GeneratedRegex
-{
-	[GeneratedRegex(@"(Sensor at x=)((-*)\d+)(, y=)((-*)\d+)(: closest beacon is at x=)((-*)\d+)(, y=)((-*)\d+)")]
-	internal static partial Regex ParseSensorReading();
-}
+	{
+		[GeneratedRegex(@"(Sensor at x=)((-*)\d+)(, y=)((-*)\d+)(: closest beacon is at x=)((-*)\d+)(, y=)((-*)\d+)")]
+		internal static partial Regex ParseSensorReading();
+	}

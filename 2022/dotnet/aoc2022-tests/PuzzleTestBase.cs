@@ -12,28 +12,28 @@ public abstract class PuzzleTestBase
 	[Test]
 	public void TestExample1()
 	{
-		var answer = _data.PuzzlePart1.SolvePuzzle(_data.Example);
-		Assert.That(answer, Is.EqualTo(_data.Example1ExpectedSolution));
+		var answer = _data.Examples.PuzzleExample1.SolvePuzzle(_data.Examples.Example);
+		Assert.That(answer, Is.EqualTo(_data.Examples.Example1ExpectedSolution));
 	}
 
 	[Test]
 	public void TestExample2()
 	{
-		var answer = _data.PuzzlePart2.SolvePuzzle(_data.Example);
-		Assert.That(answer, Is.EqualTo(_data.Example2ExpectedSolution));
+		var answer = _data.Examples.PuzzleExample2.SolvePuzzle(_data.Examples.Example);
+		Assert.That(answer, Is.EqualTo(_data.Examples.Example2ExpectedSolution));
 	}
 
 	[Test]
 	public void TestSolutionPart1()
 	{
-		var answer = _data.PuzzlePart1.CalculatePuzzleSolution();
-		Assert.That(answer, Is.EqualTo(_data.Part1ExpectedSolution));
+		var answer = _data.Parts.PuzzlePart1.CalculatePuzzleSolution();
+		Assert.That(answer, Is.EqualTo(_data.Parts.Part1ExpectedSolution));
 	}
 
 	[Test]
 	public void TestSolutionPart2()
 	{
-		var answer = _data.PuzzlePart2.CalculatePuzzleSolution();
-		Assert.That(answer, Is.EqualTo(_data.Part2ExpectedSolution));
+		var answer = _data.Parts.PuzzlePart2.CalculatePuzzleSolution();
+		Assert.That(answer, Is.EqualTo(_data.Parts.Part2ExpectedSolution));
 	}
 }

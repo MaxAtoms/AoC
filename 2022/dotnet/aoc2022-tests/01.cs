@@ -5,7 +5,7 @@ namespace tests;
 [TestFixture]
 public sealed class AoC_2022_1_Tests : PuzzleTestBase
 {
-	public AoC_2022_1_Tests() : base(PuzzleTestHelper) {}
+	public AoC_2022_1_Tests() : base(Data) {}
 	
 	private static readonly string[] Example = {
 		"1000",
@@ -24,15 +24,22 @@ public sealed class AoC_2022_1_Tests : PuzzleTestBase
 		"10000"
 	};
 	
-	private static readonly PuzzleTestData PuzzleTestHelper = new()
+	private static readonly PuzzleTestData Data = new()
 	{
-		PuzzlePart1 = new AoC_2022_1a(),
-		PuzzlePart2 = new AoC_2022_1b(),
-		Example = Example,
-		
-		Example1ExpectedSolution = "24000",
-		Example2ExpectedSolution = "45000",
-		Part1ExpectedSolution = "64929",
-		Part2ExpectedSolution = "193697"
+		Examples = new PuzzleExamples
+		{
+			PuzzleExample1 = new AoC_2022_1a(),
+			PuzzleExample2 = new AoC_2022_1b(),
+			Example = Example,
+			Example1ExpectedSolution = "24000",
+			Example2ExpectedSolution = "45000",
+		},
+		Parts = new PuzzleParts
+		{
+			PuzzlePart1 = new AoC_2022_1a(),
+			PuzzlePart2 = new AoC_2022_1b(),
+			Part1ExpectedSolution = "64929",
+			Part2ExpectedSolution = "193697"
+		}
 	};
 }

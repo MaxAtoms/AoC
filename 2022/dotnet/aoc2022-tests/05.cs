@@ -7,6 +7,8 @@ namespace tests;
 [TestFixture]
 public sealed class AoC_2022_5_Tests : PuzzleTestBase
 {
+	public AoC_2022_5_Tests() : base(Data) {}
+	
 	private static readonly string[] Example = {
 		"    [D]    ",
 		"[N] [C]    ",
@@ -19,18 +21,22 @@ public sealed class AoC_2022_5_Tests : PuzzleTestBase
 		"move 1 from 1 to 2"
 	};
 	
-
 	private static readonly PuzzleTestData Data = new()
 	{
-		PuzzlePart1 = new AoC_2022_5a(),
-		PuzzlePart2 = new AoC_2022_5b(),
-		Example = Example,
-		
-		Example1ExpectedSolution = "CMZ",
-		Example2ExpectedSolution = "MCD",
-		Part1ExpectedSolution = "FRDSQRRCD",
-		Part2ExpectedSolution = "HRFTQVWNN"
+		Examples = new PuzzleExamples
+		{
+			PuzzleExample1 = new AoC_2022_5a(),
+			PuzzleExample2 = new AoC_2022_5b(),
+			Example = Example,
+			Example1ExpectedSolution = "CMZ",
+			Example2ExpectedSolution = "MCD",
+		},
+		Parts = new PuzzleParts
+		{
+			PuzzlePart1 = new AoC_2022_5a(),
+			PuzzlePart2 = new AoC_2022_5b(),
+			Part1ExpectedSolution = "FRDSQRRCD",
+			Part2ExpectedSolution = "HRFTQVWNN"
+		}
 	};
-
-	public AoC_2022_5_Tests() : base(Data) {}
 }
