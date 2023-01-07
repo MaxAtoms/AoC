@@ -3,15 +3,6 @@ namespace aoc2022;
 public interface IPuzzle
 {
 	/// <summary>
-	///		Calculates the solution and prints the answer on screen.
-	/// </summary>
-	public void CalculateAndPrintPuzzleSolution()
-	{
-		var answer = CalculatePuzzleSolution();
-		Console.WriteLine(answer);
-	}
-	
-	/// <summary>
 	///		Calculates the solution for the puzzle.
 	/// </summary>
 	/// <returns>
@@ -25,10 +16,15 @@ public interface IPuzzle
 	}
 
 	/// <summary>
-	///		Denotes the number of the puzzle.
+	///		Denotes the number of the puzzle (i.e. day 1 - 25).
 	/// </summary>
 	internal int NumberOfDay { get; }
 
+	/// <summary>
+	///		Denotes the part of the puzzle (i.e. part 1 or part 2).
+	/// </summary>
+	internal abstract Part Part { get; }
+	
 	/// <summary>
 	///		Calculates the answer for a given input.
 	/// </summary>

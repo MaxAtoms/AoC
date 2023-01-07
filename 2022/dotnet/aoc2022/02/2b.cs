@@ -4,6 +4,8 @@ public sealed class AoC_2022_2b : IPuzzle
 {
 	public int NumberOfDay => 2;
 	
+	public Part Part => Part.Part2;
+	
 	private enum Play
 	{
 		Rock,

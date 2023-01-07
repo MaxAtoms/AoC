@@ -4,6 +4,8 @@ public sealed class AoC_2022_1b : IPuzzle
 {
 	public int NumberOfDay => 1;
 	
+	public Part Part => Part.Part2;
+	
 	public string SolvePuzzle(IEnumerable<string> inputLines)
 	{
 		var counter = 0;

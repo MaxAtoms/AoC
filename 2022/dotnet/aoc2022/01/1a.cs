@@ -3,6 +3,8 @@
 public sealed class AoC_2022_1a : IPuzzle
 {
 	public int NumberOfDay => 1;
+	
+	public Part Part => Part.Part1;
 
 	public string SolvePuzzle( IEnumerable<string> inputLines )
 	{

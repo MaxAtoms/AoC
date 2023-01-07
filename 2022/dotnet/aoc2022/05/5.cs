@@ -2,13 +2,27 @@ using System.Text.RegularExpressions;
 
 namespace aoc2022._05;
 
-public sealed class AoC_2022_5 : IPuzzle
+public sealed class AoC_2022_5a : AoC_2022_5
+{
+	public override Part Part => Part.Part1;
+}
+
+public sealed class AoC_2022_5b : AoC_2022_5
+{
+	public AoC_2022_5b() : base( true ) {}
+	
+	public override Part Part => Part.Part2;
+}
+
+public abstract class AoC_2022_5 : IPuzzle
 {
 	public int NumberOfDay => 5;
+
+	public abstract Part Part { get; }
 	
 	private readonly bool _part2;
 
-	public AoC_2022_5( bool part2 = false )
+	protected AoC_2022_5( bool part2 = false )
 	{
 		_part2 = part2;
 	}

@@ -1,15 +1,21 @@
 ﻿using System.Runtime.CompilerServices;
 using aoc2022;
-using aoc2022._01;
-using aoc2022._05;
-using aoc2022._02;
+using Microsoft.Extensions.DependencyInjection;
 
 [assembly: InternalsVisibleTo("aoc2022-tests")]
 
-IPuzzle day1A = new AoC_2022_1a();
-IPuzzle day1B = new AoC_2022_1b();
-IPuzzle day2A = new AoC_2022_2a();
-IPuzzle day2B = new AoC_2022_2b();
-IPuzzle day5 = new AoC_2022_5();
+const int day = 3;
+const Part part = Part.Part1;
 
-day5.CalculateAndPrintPuzzleSolution();
+var provider = DependencyInjection.BuildServiceProvider();
+var puzzles = provider.GetServices<IPuzzle>();
+
+var puzzle = puzzles.FirstOrDefault(t => t is { NumberOfDay: day, Part: part });
+
+if (puzzle is null)
+{
+	throw new Exception($"Requested Puzzle day {day} part {part} not found");
+}
+
+Console.WriteLine($"Running puzzle day {day}, part {part}");
+Console.WriteLine($"The answer is: {puzzle.CalculatePuzzleSolution()}");
