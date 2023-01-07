@@ -1,12 +1,8 @@
 ﻿namespace aoc2022._01;
 
-public class AoC_2022_1b : IChallenge
+public class AoC_2022_1b : IPuzzle
 {
-	public string CalculatePuzzleSolution()
-	{
-		var fileLines = File.ReadLines("./01/input.txt");
-		return SolvePuzzle( fileLines );
-	}
+	public int NumberOfDay => 1;
 	
 	public string SolvePuzzle(IEnumerable<string> inputLines)
 	{

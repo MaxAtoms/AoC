@@ -1,3 +1,4 @@
+using aoc2022;
 using aoc2022._01;
 
 namespace tests;
@@ -38,14 +39,16 @@ public class AoC_2022_1_Tests
 	[Test]
 	public void PuzzleSolutionPart1()
 	{
-		var answer = new AoC_2022_1a().CalculatePuzzleSolution();
+		IPuzzle puzzle = new AoC_2022_1a();
+		var answer = puzzle.CalculatePuzzleSolution();
 		Assert.That( answer, Is.EqualTo( "64929" ));
 	}
 	
 	[Test]
 	public void PuzzleSolutionPart2()
 	{
-		var answer = new AoC_2022_1b().CalculatePuzzleSolution();
+		IPuzzle puzzle = new AoC_2022_1b();
+		var answer = puzzle.CalculatePuzzleSolution();
 		Assert.That( answer, Is.EqualTo( "193697" ));
 	}
 }

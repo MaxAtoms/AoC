@@ -2,19 +2,15 @@ using System.Text.RegularExpressions;
 
 namespace aoc2022._05;
 
-public class AoC_2022_5 : IChallenge
+public class AoC_2022_5 : IPuzzle
 {
+	public int NumberOfDay => 5;
+	
 	private readonly bool _part2;
 
 	public AoC_2022_5( bool part2 = false )
 	{
 		_part2 = part2;
-	}
-	
-	public string CalculatePuzzleSolution()
-	{
-		var fileLines = File.ReadLines("./05/input.txt");
-		return SolvePuzzle( fileLines );
 	}
 
 	private record Command(int Count, int OriginPos, int EndPos);
