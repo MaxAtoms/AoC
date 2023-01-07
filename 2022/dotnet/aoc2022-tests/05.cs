@@ -3,7 +3,7 @@ using aoc2022._05;
 
 namespace tests;
 
-public class AoC_2022_5_Tests
+public sealed class AoC_2022_5_Tests
 {
 	private static readonly string[] Example = {
 		"    [D]    ",

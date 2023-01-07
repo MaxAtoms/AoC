@@ -1,10 +1,16 @@
-using aoc2022;
 using aoc2022._01;
 
 namespace tests;
 
-public class AoC_2022_1_Tests
+public sealed class AoC_2022_1_Tests
 {
+	private readonly PuzzleTestHelper _puzzleTestHelper = new()
+	{
+		PuzzlePart1 = new AoC_2022_1a(),
+		PuzzlePart2 = new AoC_2022_1b(),
+		Example = Example
+	};
+	
 	private static readonly string[] Example = {
 		"1000",
 		"2000",
@@ -25,30 +31,24 @@ public class AoC_2022_1_Tests
 	[Test]
 	public void ExamplePart1()
 	{
-		var answer = new AoC_2022_1a().SolvePuzzle(Example);
-		Assert.That( answer, Is.EqualTo( "24000" ) );
+		_puzzleTestHelper.TestExample1( "24000" );
 	}
 
 	[Test]
 	public void ExamplePart2()
 	{
-		var answer = new AoC_2022_1b().SolvePuzzle(Example);
-		Assert.That( answer, Is.EqualTo( "45000" ) );
+		_puzzleTestHelper.TestExample2( "45000" );
 	}
 
 	[Test]
 	public void PuzzleSolutionPart1()
 	{
-		IPuzzle puzzle = new AoC_2022_1a();
-		var answer = puzzle.CalculatePuzzleSolution();
-		Assert.That( answer, Is.EqualTo( "64929" ));
+		_puzzleTestHelper.TestSolutionPart1( "64929" );
 	}
 	
 	[Test]
 	public void PuzzleSolutionPart2()
 	{
-		IPuzzle puzzle = new AoC_2022_1b();
-		var answer = puzzle.CalculatePuzzleSolution();
-		Assert.That( answer, Is.EqualTo( "193697" ));
+		_puzzleTestHelper.TestSolutionPart2( "193697" );
 	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace aoc2022._02;
 
-public class AoC_2022_2a : IPuzzle
+public sealed class AoC_2022_2a : IPuzzle
 {
 	public int NumberOfDay => 2;
 	

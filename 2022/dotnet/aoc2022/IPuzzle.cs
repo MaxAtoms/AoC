@@ -17,7 +17,7 @@ public interface IPuzzle
 	/// <returns>
 	///		Solution as string.
 	/// </returns>
-	public string CalculatePuzzleSolution()
+	internal string CalculatePuzzleSolution()
 	{
 		var leadingZero = NumberOfDay < 10 ? "0" : "";
 		var fileLines = File.ReadLines($"./{leadingZero}{NumberOfDay}/input.txt");

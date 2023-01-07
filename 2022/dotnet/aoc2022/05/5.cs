@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace aoc2022._05;
 
-public class AoC_2022_5 : IPuzzle
+public sealed class AoC_2022_5 : IPuzzle
 {
 	public int NumberOfDay => 5;
 	

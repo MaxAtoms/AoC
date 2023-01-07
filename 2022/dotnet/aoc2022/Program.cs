@@ -1,7 +1,10 @@
-﻿using aoc2022;
+﻿using System.Runtime.CompilerServices;
+using aoc2022;
 using aoc2022._01;
 using aoc2022._05;
 using aoc2022._02;
+
+[assembly: InternalsVisibleTo("aoc2022-tests")]
 
 IPuzzle day1A = new AoC_2022_1a();
 IPuzzle day1B = new AoC_2022_1b();
