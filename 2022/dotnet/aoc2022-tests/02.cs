@@ -3,45 +3,25 @@ using aoc2022._02;
 
 namespace tests;
 
-public sealed class AoC_2022_2_Tests
+public sealed class AoC_2022_2_Tests : PuzzleTestBase
 {
+	public AoC_2022_2_Tests() : base(Data) {}
+	
 	private static readonly string[] Example = {
 		"A Y",
 		"B X",
 		"C Z"
 	};
 
-	[Test]
-	public void ExamplePart1()
+	private static readonly PuzzleTestData Data = new()
 	{
-		var example = Example;
-
-		var answer = new AoC_2022_2a().SolvePuzzle(example);
-		Assert.That( answer, Is.EqualTo( "15" ) );
-	}
-
-	[Test]
-	public void ExamplePart2()
-	{
-		var example = Example;
-
-		var answer = new AoC_2022_2b().SolvePuzzle(example);
-		Assert.That( answer, Is.EqualTo( "12" ) );
-	}
-
-	[Test]
-	public void PuzzleSolutionPart1()
-	{
-		IPuzzle puzzle = new AoC_2022_2a();
-		var answer = puzzle.CalculatePuzzleSolution();
-		Assert.That( answer, Is.EqualTo( "15691" ));
-	}
-	
-	[Test]
-	public void PuzzleSolutionPart2()
-	{
-		IPuzzle puzzle = new AoC_2022_2b();
-		var answer = puzzle.CalculatePuzzleSolution();
-		Assert.That( answer, Is.EqualTo( "12989" ));
-	}
+		PuzzlePart1 = new AoC_2022_2a(),
+		PuzzlePart2 = new AoC_2022_2b(),
+		Example = Example,
+		
+		Example1ExpectedSolution = "15",
+		Example2ExpectedSolution = "12",
+		Part1ExpectedSolution = "15691",
+		Part2ExpectedSolution = "12989"
+	};
 }

@@ -1,9 +1,11 @@
 using aoc2022;
+using aoc2022._02;
 using aoc2022._05;
 
 namespace tests;
 
-public sealed class AoC_2022_5_Tests
+[TestFixture]
+public sealed class AoC_2022_5_Tests : PuzzleTestBase
 {
 	private static readonly string[] Example = {
 		"    [D]    ",
@@ -17,33 +19,18 @@ public sealed class AoC_2022_5_Tests
 		"move 1 from 1 to 2"
 	};
 	
-	[Test]
-	public void ExamplePart1()
-	{
-		var answer = new AoC_2022_5().SolvePuzzle(Example);
-		Assert.That( answer, Is.EqualTo( "CMZ" ) );
-	}
 
-	[Test]
-	public void ExamplePart2()
+	private static readonly PuzzleTestData Data = new()
 	{
-		var answer = new AoC_2022_5(true).SolvePuzzle(Example);
-		Assert.That( answer, Is.EqualTo( "MCD" ) );
-	}
+		PuzzlePart1 = new AoC_2022_5a(),
+		PuzzlePart2 = new AoC_2022_5b(),
+		Example = Example,
+		
+		Example1ExpectedSolution = "CMZ",
+		Example2ExpectedSolution = "MCD",
+		Part1ExpectedSolution = "FRDSQRRCD",
+		Part2ExpectedSolution = "HRFTQVWNN"
+	};
 
-	[Test]
-	public void PuzzleSolutionPart1()
-	{
-		IPuzzle puzzle = new AoC_2022_5();
-		var answer = puzzle.CalculatePuzzleSolution();
-		Assert.That( answer, Is.EqualTo( "FRDSQRRCD" ));
-	}
-	
-	[Test]
-	public void PuzzleSolutionPart2()
-	{
-		IPuzzle puzzle = new AoC_2022_5(true);
-		var answer = puzzle.CalculatePuzzleSolution();
-		Assert.That( answer, Is.EqualTo( "HRFTQVWNN" ));
-	}
+	public AoC_2022_5_Tests() : base(Data) {}
 }
